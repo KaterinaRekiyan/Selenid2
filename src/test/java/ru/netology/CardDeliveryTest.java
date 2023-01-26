@@ -31,7 +31,7 @@ public class CardDeliveryTest {
         $("[data-test-id='phone'] input").setValue("+79998887766");
         $("[data-test-id ='agreement']").click();
         $("button.button").click();
-        $("[data-test-id='notification__content']")
+        $("[data-test-id='notification'] .notification__content")
                 .shouldBe(Condition.visible, Duration.ofSeconds(15))
                 .shouldHave(com.codeborne.selenide.Condition.exactText("Встреча успешно забронирована на " + currentDate));
     }
