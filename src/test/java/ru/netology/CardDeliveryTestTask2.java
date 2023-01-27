@@ -24,12 +24,12 @@ public class CardDeliveryTestTask2 {
 
     @Test
     public void shouldBeSuccesfullyCompleted() {
-        String city = "Рязань";
+        String city = "Москва";
         int dayToAdd = 7;
         int defaultDays = 3;
         $("[data-test-id='city'] input").setValue(city.substring(0, 2));
         $$(".menu-item__control").findBy(text(city)).click();
-        $("[data-test-id='data'] input").click();
+        $(".calendar-input").click();
         if (!generateDate(defaultDays, "MM").equals(generateDate(dayToAdd, "MM"))) {
             $("[data-step='1']").click();
         }
